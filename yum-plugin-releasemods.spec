@@ -1,7 +1,7 @@
 Summary: Yum plugin that removes the yum repo packages that are installed by release files.
 Name: yum-plugin-releasemods
-Version: 1.0
-Release: 7
+Version: 1.1
+Release: 1
 BuildArch: noarch
 Group: System
 License: ASL 2.0
@@ -20,8 +20,8 @@ local mirrors of those repositories.
 rm -rf %{buildroot}
 install -d %{buildroot}/usr/lib/yum-plugins
 install -d %{buildroot}/etc/yum/pluginconf.d
-install -m 0644 releasemods.py %{buildroot}/usr/lib/yum-plugins/releasemods.py
-install -m 0644 releasemods.conf %{buildroot}/etc/yum/pluginconf.d/releasemods.conf
+install -m 0644 src/releasemods.py %{buildroot}/usr/lib/yum-plugins/releasemods.py
+install -m 0644 src/releasemods.conf %{buildroot}/etc/yum/pluginconf.d/releasemods.conf
 
 %postun
 rm -f /usr/lib/yum-plugins/releasemods.py[co]
@@ -35,6 +35,8 @@ rm -rf %{buildroot}
 /etc/yum/pluginconf.d/releasemods.conf
 
 %changelog
+* Mon Nov 20 2017 Robert Frank <robert.frank@manchester.ac.uk>
+- fix source path in spec file
 * Fri Apr 24 2015 Robert Frank <robert.frank@manchester.ac.uk>
 - added foreman-release to configuration
 * Tue Nov 18 2014 Robert Frank <robert.frank@manchester.ac.uk>
