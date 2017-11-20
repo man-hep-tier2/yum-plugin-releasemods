@@ -1,7 +1,7 @@
 Summary: Yum plugin that removes the yum repo packages that are installed by release files.
 Name: yum-plugin-releasemods
 Version: 1.1
-Release: 1
+Release: 2
 BuildArch: noarch
 Group: System
 License: ASL 2.0
