@@ -1,13 +1,13 @@
 Summary: Yum plugin that removes the yum repo packages that are installed by release files.
 Name: yum-plugin-releasemods
-Version: 1.1
-Release: 2
+Version: 1.1.1
+Release: 1
 BuildArch: noarch
 Group: System
 License: ASL 2.0
 Source: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-buildroot
-#Requires: 
+Requires: yum >= 3
 %description
 The plugin checks for yum repository files that were installed by release packages
 (such as epel-release) and removes them. This ensures that they don't interfere with
@@ -38,6 +38,7 @@ rm -rf %{buildroot}
 * Mon Nov 20 2017 Robert Frank <robert.frank@manchester.ac.uk>
 - fix source path in spec file
 - fix files section
+- add yum as requirement
 * Fri Apr 24 2015 Robert Frank <robert.frank@manchester.ac.uk>
 - added foreman-release to configuration
 * Tue Nov 18 2014 Robert Frank <robert.frank@manchester.ac.uk>
