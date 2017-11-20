@@ -31,12 +31,13 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-/usr/lib/yum-plugins/releasemods.py
+/usr/lib/yum-plugins/releasemods.py*
 /etc/yum/pluginconf.d/releasemods.conf
 
 %changelog
 * Mon Nov 20 2017 Robert Frank <robert.frank@manchester.ac.uk>
 - fix source path in spec file
+- fix files section
 * Fri Apr 24 2015 Robert Frank <robert.frank@manchester.ac.uk>
 - added foreman-release to configuration
 * Tue Nov 18 2014 Robert Frank <robert.frank@manchester.ac.uk>
